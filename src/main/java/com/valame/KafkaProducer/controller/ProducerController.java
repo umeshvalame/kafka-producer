@@ -38,7 +38,8 @@ public class ProducerController {
 		userRegEvent.setUser(user);
 		
 		try {
-			var future = kafkaProducerService.publishUserRegistrationEvent(userRegEvent);
+			//var future = kafkaProducerService.publishUserRegistrationEvent(userRegEvent);
+			kafkaProducerService.publishUserRegistrationEventWithCallBack(userRegEvent);
 		} catch (JsonProcessingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
